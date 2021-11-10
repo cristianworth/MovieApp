@@ -1,5 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MovieApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MovieAppContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieAppContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -23,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Movies}/{action=Index}/{id?}");
 
 app.Run();
