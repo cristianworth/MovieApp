@@ -13,3 +13,6 @@ Install-Package Microsoft.EntityFrameworkCore.SqlServer -IncludePrerelease
 ```
 Update-Database
 ```
+
+### Useful Links
+[Add ValidateAntiForgeryToken to all methods](https://referbruv.com/blog/posts/understanding-how-antiforgerytoken-works-in-aspnet-core-mvc "ValidateAntiForgeryToken ASP.NET Core MVC")
